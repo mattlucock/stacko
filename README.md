@@ -1,5 +1,9 @@
 # stacko
 
+![npm version badge](https://img.shields.io/npm/v/stacko?style=flat-square)
+![npm minified bundle size badge](https://img.shields.io/bundlephobia/min/stacko?style=flat-square)
+![Build status badge](https://img.shields.io/github/actions/workflow/status/mattlucock/stacko/build.yml?style=flat-square)
+
 A fast, tiny, type-safe stack data structure.
 
 ```ts
@@ -37,7 +41,7 @@ stack.clear()
 ## Features
 
 - `stacko` is implemented as an array, making it **up to 4–5x faster** than a number of other JS stacks that are implemented as a linked list.
-- `stacko` is tiny (386b). [Read the source code](); it won't take long.
+- `stacko` is tiny. [Read the source code](https://github.com/mattlucock/stacko/blob/main/src/stack.ts); it won't take long.
 - `stacko` supports an elegant iterator for iteratively popping the stack.
 
 ## Iteration
