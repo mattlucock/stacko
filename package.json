@@ -1,0 +1,50 @@
+{
+  "name": "stacko",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "build": "rimraf lib && tsc -p tsconfig-build.json",
+    "test": "tsx --test test/**.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "eslint": "^8.31.0",
+    "eslint-config-standard-with-typescript": "^26.0.0",
+    "eslint-plugin-filename-rules": "^1.3.1",
+    "rimraf": "^3.0.2",
+    "tsx": "^3.12.1",
+    "typescript": "^4.9.4"
+  },
+  "files": [
+    "lib"
+  ],
+  "exports": "./lib/stack.js",
+  "description": "A fast, tiny, type-safe stack data structure.",
+  "keywords": [
+    "stack",
+    "data structure",
+    "push",
+    "pop",
+    "peek",
+    "first in last out",
+    "filo",
+    "typescript",
+    "ts",
+    "tiny",
+    "lightweight",
+    "fast"
+  ],
+  "license": "ISC",
+  "author": {
+    "name": "Matt Lucock"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattlucock/stacko.git"
+  },
+  "homepage": "https://github.com/mattlucock/stacko",
+  "bugs": {
+    "url": "https://github.com/mattlucock/stacko/issues"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "root": true,
+  "extends": ["standard-with-typescript"],
+  "plugins": ["filename-rules"],
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "ignorePatterns": ["lib"],
+
+  "rules": {
+    "filename-rules/match": ["error", "kebab-case"],
+    "max-len": ["error", { "code": 100 }],
+    "no-console": "error"
+  }
+}
