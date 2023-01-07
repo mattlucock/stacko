@@ -19,6 +19,7 @@
   "files": [
     "lib"
   ],
+  "main": "./lib/stack.js",
   "exports": "./lib/stack.js",
   "description": "A fast, tiny, type-safe stack data structure.",
   "keywords": [
