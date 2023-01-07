@@ -16,11 +16,12 @@
     "tsx": "^3.12.1",
     "typescript": "^4.9.4"
   },
-  "files": [
-    "lib"
-  ],
   "main": "./lib/stack.js",
   "exports": "./lib/stack.js",
+  "files": [
+    "CHANGELOG.md",
+    "lib"
+  ],
   "description": "A fast, tiny, type-safe stack data structure.",
   "keywords": [
     "stack",
