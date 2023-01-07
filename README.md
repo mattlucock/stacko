@@ -1,8 +1,9 @@
 # stacko
 
-![npm version badge](https://img.shields.io/npm/v/stacko?style=flat-square)
-![npm minified bundle size badge](https://img.shields.io/bundlephobia/min/stacko?style=flat-square)
-![Build status badge](https://img.shields.io/github/actions/workflow/status/mattlucock/stacko/build.yml?style=flat-square)
+![npm version](https://img.shields.io/npm/v/stacko?style=flat-square)
+![npm minified bundle size](https://img.shields.io/bundlephobia/min/stacko?style=flat-square)
+![Build status](https://img.shields.io/github/actions/workflow/status/mattlucock/stacko/build.yml?style=flat-square)
+![License](https://img.shields.io/github/license/mattlucock/stacko?style=flat-square)
 
 A fast, tiny, type-safe stack data structure.
 
