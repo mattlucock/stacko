@@ -7,6 +7,7 @@ void test('Stack is empty by default', () => {
   const stack = new Stack<unknown>()
 
   assert.equal(stack.size, 0)
+  assert.equal(stack.empty, true)
   assert.equal(stack.peek(), undefined)
 })
 
@@ -15,6 +16,7 @@ void test('Basic operations', () => {
 
   stack.push('a')
   assert.equal(stack.size, 1)
+  assert.equal(stack.empty, false)
   assert.equal(stack.peek(), 'a')
 
   stack.push('b')
@@ -24,6 +26,7 @@ void test('Basic operations', () => {
   assert.equal(stack.pop(), 'b')
   assert.equal(stack.pop(), 'a')
   assert.equal(stack.size, 0)
+  assert.equal(stack.empty, true)
 })
 
 void test('Clearing the stack', () => {
@@ -33,6 +36,7 @@ void test('Clearing the stack', () => {
   stack.clear()
 
   assert.equal(stack.size, 0)
+  assert.equal(stack.empty, true)
 })
 
 void test('toArray() returns the stack\'s values in insertion order', () => {

@@ -8,9 +8,9 @@ export class Stack<T> {
   private _items: T[]
 
   /**
-   * @param initialItems - If provided, the elements of the array will be set as the initial items
-   * of the stack. The array will be considered as being in stack order i.e. the last element of
-   * the array will be the top item of the stack. The array itself will not be mutated.
+   * @param initialItems If provided, the elements of the array will be set as the initial items of
+   * the stack. The array will be considered as being in stack order i.e. the last element of the
+   * array will be the top item of the stack. The array itself will not be mutated.
    */
   public constructor (initialItems?: readonly T[]) {
     this._items = (initialItems !== undefined ? initialItems.slice() : [])
@@ -21,6 +21,13 @@ export class Stack<T> {
    */
   public get size (): number {
     return this._items.length
+  }
+
+  /**
+   * Whether the stack is empty. Equivalent to `size === 0`.
+   */
+  public get empty (): boolean {
+    return this.size === 0
   }
 
   /**
