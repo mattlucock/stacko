@@ -20,6 +20,7 @@ stack.push('banana')
 stack.push('pear')
 
 stack.size // 3
+stack.empty // false
 stack.peek() // 'pear'
 
 stack.pop() // 'pear'
@@ -34,6 +35,7 @@ for (const item of stack.popper()) {
 // 'apple'
 
 stack.size // 0
+stack.empty // true
 
 stack.push('clear this')
 stack.clear()
@@ -49,12 +51,31 @@ stack.clear()
 
 What does it mean to iterate a stack? It isn't immediately obvious what it should mean, since a stack is not an array or a list. With a stack, only the top item should be visible at any time.
 
-`stacko` supports an iterator that iteratively pops the stack, returned by the `popper()` method. You can use it directly with a `for...of` loop. Iterative popping is something you probably want to do anyway, and this is an elegant solution to iterating a stack.
+`stacko` supports an iterator that iteratively pops the stack, returned by the `popper()` method. You can use it directly with a `for...of` loop. Iterative popping is something you probably want to do anyway, and this is an elegant solution for iterating a stack.
 
 Note:
 - Unlike most iterators, this iterator has side effects (it pops the stack).
 - The item is popped prior to the body of the loop, meaning that inside the loop, the item is no longer on the stack. You could then peek the stack to look ahead to the next item, and you can `break` the loop at any time.
 - The iterator does not create a copy of the stack; it is 'live'. This means you can mutate the stack while iterating it, and the behaviour will remain consistent.
+
+The `popper()` method also supports an optional test function as an argument. The test function will be called with each item before the item is popped, and returns a boolean. If the result is `true`, the item will be popped and returned from the iterator as normal. If the result is `false`, the item won't be popped and the iteration will terminate. This provides an elegant solution for conditionally popping a stack only up to a certain point.
+
+```ts
+// Example calling popper() with a test function
+const stack = new Stack<number>()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+
+// 3 and 2 will be popped, but 1 won't be
+for (const item of stack.popper(x => x > 1)) {
+  console.log(item)
+}
+// 3
+// 2
+
+stack.peek() // 1
+```
 
 Since the stack can't be iterated like an array (for the reason stated above), it is incompatible with `Array.from()`. To convert a stack to an array, call the `toArray()` method.
 
@@ -63,10 +84,11 @@ Since the stack can't be iterated like an array (for the reason stated above), i
 `Stack<T>` has the following public API:
 
 - `size: number`
+- `empty: boolean` (equal to `size === 0`)
 - `peek(): T | undefined`
 - `push(item: T)`
 - `pop(): T | undefined`
 - `toArray(): T[]`
 - `copy(): Stack<T>`
 - `clear()`
-- `popper(): IterableIterator<T>`
+- `popper(testFn?: (item: T) => boolean): IterableIterator<T>`
