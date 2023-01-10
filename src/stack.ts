@@ -80,16 +80,16 @@ export class Stack<T> {
    *
    * The iterator does not make a copy of the stack; it is 'live'.
    *
-   * @param predicate An optional function to evaluate for each item. The item will only be popped
-   * if the predicate returns truthy. If the predicate returns falsy, the item won't be popped and
-   * the iterator will complete.
+   * @param testFn An optional function to evaluate for each item. The item will only be popped if
+   * the function returns truthy. If the function returns falsy, the item won't be popped and the
+   * iterator will complete.
    */
-  public * popper (predicate?: (item: T) => boolean): IterableIterator<T> {
+  public * popper (testFn?: (item: T) => boolean): IterableIterator<T> {
     let item: T | undefined
 
     while ((item = this.peek()) !== undefined) {
       // Note that a non-TS user may not return a boolean from the predicate.
-      if (predicate !== undefined && !predicate(item)) {
+      if (testFn !== undefined && !testFn(item)) {
         break
       }
 

@@ -81,7 +81,7 @@ void test('copy() returns a shallow copy of the stack', () => {
   assert.equal(original.size, 2)
 })
 
-void test('popper() without a predicate', () => {
+void test('popper() without a test function', () => {
   const stack = new Stack<string>()
   stack.push('a')
   stack.push('b')
@@ -101,7 +101,7 @@ void test('popper() without a predicate', () => {
   assert.equal(result.done, true)
 })
 
-void test('popper() with a predicate', () => {
+void test('popper() with a test function', () => {
   const stack = new Stack<number>()
   stack.push(1)
   stack.push(2)
