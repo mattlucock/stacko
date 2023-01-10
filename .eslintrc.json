@@ -8,6 +8,7 @@
   "ignorePatterns": ["lib"],
 
   "rules": {
+    "arrow-parens": ["error", "always"],
     "filename-rules/match": ["error", "kebab-case"],
     "max-len": ["error", { "code": 100 }],
     "no-console": "error"

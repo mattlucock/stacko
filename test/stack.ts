@@ -106,7 +106,7 @@ void test('popper() with a predicate', () => {
   stack.push(1)
   stack.push(2)
 
-  const iterator = stack.popper(x => x > 1)
+  const iterator = stack.popper((x) => x > 1)
 
   let result = iterator.next()
   assert.equal(result.done, false)
