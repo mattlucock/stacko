@@ -73,27 +73,20 @@ export class Stack<T> {
    *
    * The iterator does not make a copy of the stack; it is 'live'.
    *
-   * @example
-   * ```
-   * const stack = new Stack<string>()
-   *
-   * stack.push('apple')
-   * stack.push('banana')
-   * stack.push('pear')
-   *
-   * for (const item of stack.popper()) {
-   *   console.log(item)
-   * }
-   * // 'pear'
-   * // 'banana'
-   * // 'apple'
-   *
-   * stack.size // 0
-   * ```
+   * @param predicate An optional function to evaluate for each item. The item will only be popped
+   * if the predicate returns truthy. If the predicate returns falsy, the item won't be popped and
+   * the iterator will complete.
    */
-  public * popper (): IterableIterator<T> {
+  public * popper (predicate?: (item: T) => boolean): IterableIterator<T> {
     let item: T | undefined
-    while ((item = this.pop()) !== undefined) {
+
+    while ((item = this.peek()) !== undefined) {
+      // Note that a non-TS user may not return a boolean from the predicate.
+      if (predicate !== undefined && !predicate(item)) {
+        break
+      }
+
+      this.pop()
       yield item
     }
   }

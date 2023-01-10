@@ -77,7 +77,7 @@ void test('copy() returns a shallow copy of the stack', () => {
   assert.equal(original.size, 2)
 })
 
-void test('popper()', () => {
+void test('popper() without a predicate', () => {
   const stack = new Stack<string>()
   stack.push('a')
   stack.push('b')
@@ -95,6 +95,22 @@ void test('popper()', () => {
   result = iterator.next()
   assert.equal(result.value, undefined)
   assert.equal(result.done, true)
+})
+
+void test('popper() with a predicate', () => {
+  const stack = new Stack<number>()
+  stack.push(1)
+  stack.push(2)
+
+  const iterator = stack.popper(x => x > 1)
+
+  let result = iterator.next()
+  assert.equal(result.done, false)
+
+  result = iterator.next()
+  assert.equal(result.done, true)
+
+  assert.equal(stack.peek(), 1)
 })
 
 void test('toJSON()', () => {
