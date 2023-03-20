@@ -1,11 +1,12 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "module": "es6",
-    "target": "es6",
-    "isolatedModules": true,
-    "exactOptionalPropertyTypes": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": true
-  }
+	"compilerOptions": {
+		"exactOptionalPropertyTypes": true,
+		"isolatedModules": true,
+		"module": "es2022",
+		"moduleResolution": "nodenext",
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedIndexedAccess": true,
+		"strict": true,
+		"target": "es2022"
+	}
 }

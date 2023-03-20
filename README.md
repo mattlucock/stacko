@@ -1,11 +1,10 @@
 # stacko
 
 [![npm version](https://img.shields.io/npm/v/stacko?style=flat-square)](https://www.npmjs.com/package/stacko)
-[![npm minified bundle size](https://img.shields.io/bundlephobia/min/stacko?style=flat-square)](https://bundlephobia.com/package/stacko)
 [![Build status](https://img.shields.io/github/actions/workflow/status/mattlucock/stacko/build.yml?style=flat-square)](https://github.com/mattlucock/stacko/actions/workflows/build.yml)
 [![License](https://img.shields.io/github/license/mattlucock/stacko?style=flat-square)](https://github.com/mattlucock/stacko/blob/main/LICENSE.md)
 
-A fast, tiny, type-safe stack data structure.
+Fast, tiny, type-safe stack data structure.
 
 ```ts
 import { Stack } from 'stacko'
@@ -29,7 +28,7 @@ stack.toArray() // ['apple', 'banana']
 
 // Iteratively pop items off the stack
 for (const item of stack.popper()) {
-  console.log(item)
+	console.log(item)
 }
 // 'banana'
 // 'apple'
@@ -44,7 +43,7 @@ stack.clear()
 ## Features
 
 - `stacko` is implemented as an array, making it **up to 4–5x faster** than a number of other JS stacks that are implemented as a linked list.
-- `stacko` is tiny. [Read the source code](https://github.com/mattlucock/stacko/blob/main/src/stack.ts); it won't take long.
+- `stacko` is tiny.
 - `stacko` supports an elegant iterator for iteratively popping the stack.
 
 ## Iteration
@@ -54,6 +53,7 @@ What does it mean to iterate a stack? It isn't immediately obvious what it shoul
 `stacko` supports an iterator that iteratively pops the stack, returned by the `popper()` method. You can use it directly with a `for...of` loop. Iterative popping is something you probably want to do anyway, and this is an elegant solution for iterating a stack.
 
 Note:
+
 - Unlike most iterators, this iterator has side effects (it pops the stack).
 - The item is popped prior to the body of the loop, meaning that inside the loop, the item is no longer on the stack. You could then peek the stack to look ahead to the next item, and you can `break` the loop at any time.
 - The iterator does not create a copy of the stack; it is 'live'. This means you can mutate the stack while iterating it, and the behaviour will remain consistent.
@@ -68,8 +68,8 @@ stack.push(2)
 stack.push(3)
 
 // 3 and 2 will be popped, but 1 won't be
-for (const item of stack.popper(x => x > 1)) {
-  console.log(item)
+for (const item of stack.popper((x) => x > 1)) {
+	console.log(item)
 }
 // 3
 // 2

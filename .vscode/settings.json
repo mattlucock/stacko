@@ -1,8 +1,11 @@
 {
-  "editor.tabSize": 2,
-  "editor.wordWrapColumn": 100,
-  "editor.rulers": [100],
-  "files.trimTrailingWhitespace": true,
-  "files.insertFinalNewline": true,
-  "files.trimFinalNewlines": false
+	"editor.wordWrapColumn": 100,
+	"editor.rulers": [100],
+	"files.trimFinalNewlines": true,
+	"typescript.tsdk": "node_modules/typescript/lib",
+
+	"[javascript][json][markdown][typescript][yaml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.formatOnSave": true
+	}
 }
