@@ -43,7 +43,7 @@ stack.clear()
 ## Features
 
 - `stacko` is implemented as an array, making it **up to 4–5x faster** than a number of other JS stacks that are implemented as a linked list.
-- `stacko` is tiny.
+- `stacko` is tiny (215 bytes minified and Brotli compressed).
 - `stacko` supports an elegant iterator for iteratively popping the stack.
 
 ## Iteration
