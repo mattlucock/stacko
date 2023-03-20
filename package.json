@@ -30,7 +30,7 @@
 	"files": [
 		"dist"
 	],
-	"description": "Fast, tiny, type-safe stack data structure.",
+	"description": "Fast, tiny, type-safe stack data structure",
 	"keywords": [
 		"stack",
 		"data structure",
