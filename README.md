@@ -1,7 +1,7 @@
 # stacko
 
 [![npm version](https://img.shields.io/npm/v/stacko?style=flat-square)](https://www.npmjs.com/package/stacko)
-[![Build status](https://img.shields.io/github/actions/workflow/status/mattlucock/stacko/build.yml?style=flat-square)](https://github.com/mattlucock/stacko/actions/workflows/build.yml)
+[![Build status](https://img.shields.io/github/actions/workflow/status/mattlucock/stacko/build.yaml?style=flat-square)](https://github.com/mattlucock/stacko/actions/workflows/build.yaml)
 [![License](https://img.shields.io/github/license/mattlucock/stacko?style=flat-square)](https://github.com/mattlucock/stacko/blob/main/LICENSE.md)
 
 Fast, tiny, type-safe stack data structure.
