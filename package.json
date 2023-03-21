@@ -46,12 +46,11 @@
 		"lightweight",
 		"fast"
 	],
-	"license": "MIT",
+	"license": "Unlicense",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mattlucock/stacko.git"
 	},
-	"homepage": "https://github.com/mattlucock/stacko",
 	"bugs": {
 		"url": "https://github.com/mattlucock/stacko/issues"
 	}
