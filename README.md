@@ -1,6 +1,6 @@
 # stacko
 
-[![npm version](https://img.shields.io/npm/v/stacko?style=flat-square)](https://www.npmjs.com/package/stacko)
+[![npm version](https://img.shields.io/npm/v/stacko?style=flat-square)](https://npm.im/stacko)
 [![License](https://img.shields.io/github/license/mattlucock/stacko?style=flat-square)](https://github.com/mattlucock/stacko/blob/main/LICENSE.md)
 [![Build status](https://img.shields.io/github/actions/workflow/status/mattlucock/stacko/build.yaml?style=flat-square)](https://github.com/mattlucock/stacko/actions/workflows/build.yaml)
 
@@ -28,7 +28,7 @@ stack.toArray() // ['apple', 'banana']
 
 // Iteratively pop items off the stack
 for (const item of stack.popper()) {
-	console.log(item)
+  console.log(item)
 }
 // 'banana'
 // 'apple'
@@ -56,7 +56,7 @@ Note:
 
 - Unlike most iterators, this iterator has side effects (it pops the stack).
 - The item is popped prior to the body of the loop, meaning that inside the loop, the item is no longer on the stack. You could then peek the stack to look ahead to the next item, and you can `break` the loop at any time.
-- The iterator does not create a copy of the stack; it is 'live'. This means you can mutate the stack while iterating it, and the behaviour will remain consistent.
+- The iterator does not create a copy of the stack; it is 'live'. This means you can mutate the stack while iterating it, and the behavior will remain consistent.
 
 The `popper()` method also supports an optional test function as an argument. The test function will be called with each item before the item is popped, and returns a boolean. If the result is `true`, the item will be popped and returned from the iterator as normal. If the result is `false`, the item won't be popped and the iteration will terminate. This provides an elegant solution for conditionally popping a stack only up to a certain point.
 
@@ -69,7 +69,7 @@ stack.push(3)
 
 // 3 and 2 will be popped, but 1 won't be
 for (const item of stack.popper((x) => x > 1)) {
-	console.log(item)
+  console.log(item)
 }
 // 3
 // 2
