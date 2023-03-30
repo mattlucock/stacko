@@ -19,7 +19,6 @@ stack.push('banana')
 stack.push('pear')
 
 stack.size // 3
-stack.empty // false
 stack.peek() // 'pear'
 
 stack.pop() // 'pear'
@@ -34,7 +33,6 @@ for (const item of stack.popper()) {
 // 'apple'
 
 stack.size // 0
-stack.empty // true
 
 stack.push('clear this')
 stack.clear()
@@ -43,7 +41,7 @@ stack.clear()
 ## Features
 
 - `stacko` is implemented as an array, making it **up to 4–5x faster** than a number of other JS stacks that are implemented as a linked list.
-- `stacko` is tiny (215 bytes minified and Brotli compressed).
+- `stacko` is tiny (200 bytes minified and Brotli compressed).
 - `stacko` supports an elegant iterator for iteratively popping the stack.
 
 ## Iteration
@@ -84,7 +82,6 @@ Since the stack can't be iterated like an array (for the reason stated above), i
 `Stack<T>` has the following public API:
 
 - `size: number`
-- `empty: boolean` (equal to `size === 0`)
 - `peek(): T | undefined`
 - `push(item: T)`
 - `pop(): T | undefined`

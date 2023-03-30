@@ -21,13 +21,6 @@ export class Stack<T> {
 	}
 
 	/**
-	 * Whether the stack is empty. Equivalent to `size === 0`.
-	 */
-	get empty(): boolean {
-		return this.size === 0
-	}
-
-	/**
 	 * Returns the top item from the stack without popping it.
 	 * @returns The top item from the stack, or `undefined` if the stack is empty.
 	 */
