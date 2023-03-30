@@ -7,7 +7,7 @@
 		"check:lint": "eslint .",
 		"check:ts": "tsc -p tsconfig.json --noEmit",
 		"check": "pnpm run check:format && pnpm run check:lint && pnpm run check:ts",
-		"build:main": "esbuild src/stack.ts --platform=neutral --bundle --outfile=dist/stack.js",
+		"build:main": "esbuild src/stack.ts --platform=neutral --bundle --minify --outfile=dist/stack.js",
 		"build:types": "tsc -p tsconfig.types.json",
 		"build": "shx rm -rf dist && pnpm run build:main && pnpm run build:types",
 		"test": "tsx --test test/**.ts"
